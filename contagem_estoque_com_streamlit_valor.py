@@ -683,6 +683,7 @@ for categoria, itens in categorias_estoque.items():
     with st.expander(f"📂 {categoria.title()}"):
         for item in itens:
             quantidade = st.number_input(f"{item}", min_value=0.0, step=0.1, key=item)
+            # quantidade = st.number_input(f"{item}", min_value=0.0, step=0.1, key=item)
             valor_unitario = valores_unitarios.get(item, 1.00)
             valor_total = round(quantidade * valor_unitario, 2)
 
