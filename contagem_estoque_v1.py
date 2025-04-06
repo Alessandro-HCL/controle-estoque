@@ -248,59 +248,59 @@
 #     anexo=nome_arquivo
 # )
 
-# import pandas as pd
-# from datetime import datetime
-# import yagmail
-#
-# # Importa os itens classificados (arquivo deve estar no mesmo diretório)
-# from itens_classificados import itens_classificados
-#
-# # Organiza os itens por categoria
-# categorias_estoque = {}
-# for item, categoria in itens_classificados:
-#     if categoria not in categorias_estoque:
-#         categorias_estoque[categoria] = []
-#     categorias_estoque[categoria].append(item)
-#
-# estoque = {}
-#
-# print("📦 Insira as quantidades dos itens de estoque por categoria:\n")
-#
-# for categoria, itens in categorias_estoque.items():
-#     print(f"\n=== {categoria.upper()} ===")
-#     for item in itens:
-#         while True:
-#             try:
-#                 quantidade = float(input(f"{item}: "))
-#                 estoque[item] = quantidade
-#                 break
-#             except ValueError:
-#                 print("⚠️ Por favor, digite um número válido.")
-#
-# # Gera a planilha com os dados
-# df = pd.DataFrame(list(estoque.items()), columns=['Item', 'Quantidade'])
-# data_hora = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-# nome_arquivo = f"estoque_{data_hora}.xlsx"
-# df.to_excel(nome_arquivo, index=False)
-#
-# print(f"\n✅ Planilha gerada com sucesso: {nome_arquivo}")
-#
-# # Envia o e-mail com o relatório de estoque
-# def enviar_email(destinatario, assunto, corpo, anexo):
-#     try:
-#         yag = yagmail.SMTP(user="ale.moreira@gmail.com", password="gncuqrzzkstgeamn")
-#         yag.send(to=destinatario, subject=assunto, contents=corpo, attachments=anexo)
-#         print("📧 Email enviado com sucesso!")
-#     except Exception as e:
-#         print("❌ Erro ao enviar e-mail:", e)
-#
-# # Enviar planilha por e-mail
-# email_destino = "ale.moreira@gmail.com"
-# enviar_email(
-#     destinatario=email_destino,
-#     assunto="📋 Relatório de Estoque - Contagem do Dia",
-#     corpo="Segue em anexo o controle de estoque atualizado conforme a contagem manual.",
-#     anexo=nome_arquivo
-# )
+import pandas as pd
+from datetime import datetime
+import yagmail
+
+# Importa os itens classificados (arquivo deve estar no mesmo diretório)
+from itens_classificados import itens_classificados
+
+# Organiza os itens por categoria
+categorias_estoque = {}
+for item, categoria in itens_classificados:
+    if categoria not in categorias_estoque:
+        categorias_estoque[categoria] = []
+    categorias_estoque[categoria].append(item)
+
+estoque = {}
+
+print("📦 Insira as quantidades dos itens de estoque por categoria:\n")
+
+for categoria, itens in categorias_estoque.items():
+    print(f"\n=== {categoria.upper()} ===")
+    for item in itens:
+        while True:
+            try:
+                quantidade = float(input(f"{item}: "))
+                estoque[item] = quantidade
+                break
+            except ValueError:
+                print("⚠️ Por favor, digite um número válido.")
+
+# Gera a planilha com os dados
+df = pd.DataFrame(list(estoque.items()), columns=['Item', 'Quantidade'])
+data_hora = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+nome_arquivo = f"estoque_{data_hora}.xlsx"
+df.to_excel(nome_arquivo, index=False)
+
+print(f"\n✅ Planilha gerada com sucesso: {nome_arquivo}")
+
+# Envia o e-mail com o relatório de estoque
+def enviar_email(destinatario, assunto, corpo, anexo):
+    try:
+        yag = yagmail.SMTP(user="ale.moreira@gmail.com", password="gncuqrzzkstgeamn")
+        yag.send(to=destinatario, subject=assunto, contents=corpo, attachments=anexo)
+        print("📧 Email enviado com sucesso!")
+    except Exception as e:
+        print("❌ Erro ao enviar e-mail:", e)
+
+# Enviar planilha por e-mail
+email_destino = "ale.moreira@gmail.com"
+enviar_email(
+    destinatario=email_destino,
+    assunto="📋 Relatório de Estoque - Contagem do Dia",
+    corpo="Segue em anexo o controle de estoque atualizado conforme a contagem manual.",
+    anexo=nome_arquivo
+)
 
 
