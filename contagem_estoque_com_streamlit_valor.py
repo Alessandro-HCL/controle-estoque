@@ -20,7 +20,7 @@ opcoes_contagem = {
     "6": "contagem_estoque"
 }
 
-st.title("📦 Contagem de Ítens")
+st.title("📦 Contagem de Itens - Villa Sonali")
 
 # 📌 Menu para objetivo
 escolha = st.selectbox("Selecione o objetivo da contagem:", list(opcoes_contagem.values()))
