@@ -12,7 +12,7 @@ valores_unitarios = {
    "499 - açai  (KG)": 21.2311,
    "574 - petit gateau (UN)": 20.90,
    "575 - calda de sorvete (KG)": 0.01,
-   "597 - biscoito  (CX)": 4.98,
+   "597 - biscoito(CX)": 4.98,
    "602 - bolacha maria / maizena (KG)": 0.00,
    "603 - geleia de frutas vermelhas (KG)": 0.00,
    "651 - cobertura chocolate (KG)": 34.50,
