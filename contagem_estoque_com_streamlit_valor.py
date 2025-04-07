@@ -320,7 +320,7 @@ valores_unitarios = {
 "383 - garrafa sake (UN)": 34.0,
 "384 - agua tonica 1.5 l (UN)": 6.0,
 "386 - hibisco (KG)": 39.5,
-"387 - agua s/gas 20 litros (LT)": 15.0,
+"387 - agua s/gas 20 litros (LT)": 0.57,
 "388 - xarope de gengibre (LT)": 22.9,
 "389 - espuma moscow mule (LT)": 19.5,
 "393 - polpa abacaxi com hortela (KG)": 12.9,
