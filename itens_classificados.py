@@ -634,7 +634,7 @@ itens_classificados = [
     ("858 - gelatina em po (KG)", "📦 Outros ou diversos"),
     ("862 - pistache granel  (KG)", "📦 Outros ou diversos"),
     ("863 - chia granel (KG)", "🥫 Grãos e Secos"),
-    ("883 - file de pescada ( mistura) (KG)", "🥩 Proteínas"),
+    ("883 - file de pescada ( mistura)(KG)", "🥩 Proteínas"),
     ("900 - copo long drink (UN)", "🍽️ Descartáveis e utensílios"),
     ("902 - copo cerveja (UN)", "🥤 Bebidas"),
     ("915 - pessego amarelo (UN)", "📦 Outros ou diversos"),
