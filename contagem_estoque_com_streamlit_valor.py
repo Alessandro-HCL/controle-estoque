@@ -72,7 +72,7 @@ valores_unitarios = {
     "513 - cebolinha verde (KG)": 2.95,
 "514 - papel alumiun (UN)": 0.0147,
 "521 - batata frita  (KG)": 12.998,
-"534 - requeijao catupiry  (KG)": 28.8962,
+"534 - requeijao catupiry  (KG)": 28.89,
 "622 - pao australiano (KG)": 20.371,
 "623 - linguiça calabresa (KG)": 21.7961,
 "624 - linguiça paio (KG)": 22.6917,
