@@ -734,21 +734,7 @@ valores_unitarios = {
 #         except Exception as e:
 #             st.error(f"❌ Erro ao enviar e-mail: {e}")
 
-import streamlit as st
-import pandas as pd
-from datetime import datetime
-import yagmail
-
-# Exemplo de dicionário de valores unitários (substituir com seu real)
-valores_unitarios = {
-    "285 - presunto fatiado  (KG)": 25.34,
-    # ... mais valores
-}
-
-# Simulação do módulo com os itens classificados
-from itens_classificados import itens_classificados
-
-# 🗂️ Opções de objetivo
+# 📋 Opções de contagem
 opcoes_contagem = {
     "1": "consumo_cafe_da_manha",
     "2": "consumo_casamento_cozinha",
@@ -760,18 +746,9 @@ opcoes_contagem = {
 
 st.title("📦 Contagem de Itens - Villa Sonali")
 
-# Inicializa a session_state se necessário
-if "objetivo_anterior" not in st.session_state:
-    st.session_state.objetivo_anterior = None
-
 # 📌 Menu para objetivo
 escolha = st.selectbox("Selecione o objetivo da contagem:", list(opcoes_contagem.values()))
 objetivo = escolha
-
-# Se o objetivo mudou, reseta os valores
-if st.session_state.objetivo_anterior != objetivo:
-    st.session_state.clear()
-    st.session_state.objetivo_anterior = objetivo
 
 # 📦 Organiza os itens por categoria
 categorias_estoque = {}
@@ -784,7 +761,7 @@ estoque = {}
 
 st.write("### 📋 Insira as quantidades dos itens:")
 
-# Interface de entrada para os itens
+# Interface de entrada para os itens com chave única por objetivo
 for categoria, itens in categorias_estoque.items():
     with st.expander(f"📂 {categoria.title()}"):
         for item in itens:
@@ -792,9 +769,10 @@ for categoria, itens in categorias_estoque.items():
                 f"{item}",
                 min_value=0.0,
                 step=0.1,
-                key=item
+                key=f"{objetivo}_{item}"  # <- Chave única para cada objetivo
             )
 
+            # 🔍 Remove espaços duplicados do nome do item antes de buscar o valor
             item_normalizado = " ".join(item.split())
             valor_unitario = valores_unitarios.get(item_normalizado, 0.00)
             valor_total = round(quantidade * valor_unitario, 2)
