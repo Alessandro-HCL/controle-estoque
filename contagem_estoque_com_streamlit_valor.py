@@ -37,7 +37,7 @@ valores_unitarios = {
 "512 - salsinha verde (KG)": 2.95,
 "520 - carne moida (KG)": 15.66,
 "524 - peixe file (vilmar) (KG)": 1.00,
-"569 - oleo algodao balde(UN)": 10.12,
+"569 - oleo_algodao_balde(UN)": 10.12,
 "697 - ovos de codorna (UN)": 27.06,
 "781 - abacate (KG)": 18.66,
 "824 - peixe inteiro (vilmar) (KG)": 0.00,
