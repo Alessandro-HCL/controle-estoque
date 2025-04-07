@@ -45,7 +45,7 @@ valores_unitarios = {
     "697 - ovos de codorna (un)": 27.06,
     "781 - abacate (kg)": 18.66,
     "824 - peixe inteiro (vilmar) (kg)": 0.00,
-    "285 - presunto fatiado  (kg)": 25.35,
+    "285 - presunto fatiado  (kg)": 25.34,
     "286 - peito peru (kg)": 51.54,
     "287 - copa (kg)": 12.07,
     "288 - salame (kg)": 81.12,
