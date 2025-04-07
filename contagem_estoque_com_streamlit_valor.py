@@ -35,7 +35,7 @@ valores_unitarios = {
 "344 - berinjela (KG)": 6.8392,
 "454 - pimenta paprica doce (KG)": 14.4529,
 "455 - pimenta paprica defumada (KG)": 22.9823,
-"285 - presunto fatiado  (kg)": 25.34,
+"285 - presunto fatiado (kg)": 25.34,
 "456 - pimenta paprica picante (KG)": 24.3007,
 "461 - pimenta calabresa (kg)": 0.01,
     "509 - aioli (kg)": 0.01,
