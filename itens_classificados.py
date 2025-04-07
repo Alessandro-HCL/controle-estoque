@@ -73,7 +73,7 @@ itens_classificados = [
     ("513 - cebolinha verde (KG)", "📦 Outros ou diversos"),
     ("514 - papel alumiun (UN)", "📦 Outros ou diversos"),
     ("521 - batata frita  (KG)", "🥦 Hortifrúti"),
-    ("534 - requeijao catupiry  (KG)", "🧀 Laticínios e Frios"),
+    ("534 - requeijao catupiry(KG)", "🧀 Laticínios e Frios"),
     ("622 - pao australiano (KG)", "🍞 Padaria e Massas"),
     ("623 - linguiça calabresa (KG)", "🥩 Proteínas"),
     ("624 - linguiça paio (KG)", "🥩 Proteínas"),
