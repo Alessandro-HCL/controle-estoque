@@ -1,6 +1,6 @@
 itens_classificados = [
     ("492 - granola (KG)", "📦 Outros ou diversos"),
-    ("597 - biscoito  (CX)", "📦 Outros ou diversos"),
+    ("597 - biscoito(CX)", "📦 Outros ou diversos"),
     ("499 - açai  (KG)", "📦 Outros ou diversos"),
     ("496 - achocolatado (KG)", "📦 Outros ou diversos"),
     ("495 - leite em po (KG)", "🧀 Laticínios e Frios"),
