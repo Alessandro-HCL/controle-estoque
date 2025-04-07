@@ -5,7 +5,7 @@ itens_classificados = [
     ("496 - achocolatado (KG)", "📦 Outros ou diversos"),
     ("495 - leite em po (KG)", "🧀 Laticínios e Frios"),
     # ("285 - presunto fatiado (KG)", "🧀 Laticínios e Frios"),
-    ("285 - presunto fatiado (KG)", "🧀 Laticínios e Frios"),
+    ("285-presunto-fatiado-(KG)", "🧀 Laticínios e Frios"),
     ("286 - peito peru (KG)", "🧀 Laticínios e Frios"),
     ("287 - copa (KG)", "🧀 Laticínios e Frios"),
     ("288 - salame (KG)", "🧀 Laticínios e Frios"),
