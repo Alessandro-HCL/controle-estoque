@@ -143,7 +143,7 @@ valores_unitarios = {
 "859 - linhaça marron (KG)": 13.7913,
 "931 - pepino em conserva (KG)": 9.7758,
 "931 - pepino em conserva (KG)": 9.7758,
-"272 - manteiga  (KG)": 37.34,
+"272 - manteiga(KG)": 37.34,
 "273 - creme de leite nata 45%(KG)": 28.95,
 "291 - pao mini sovadinho (KG)": 15.5,
 "292 - pao mini frances (KG)": 15.2,
