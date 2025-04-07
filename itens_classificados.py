@@ -87,7 +87,7 @@ itens_classificados = [
     ("783 - cafe soluvel (KG)", "📦 Outros ou diversos"),
     ("786 - pao de queijo doce (KG)", "🧀 Laticínios e Frios"),
     ("787 - pao de queijo rech catupiry (KG)", "🧀 Laticínios e Frios"),
-    ("817 - linguiça toscana  (KG)", "🥩 Proteínas"),
+    ("817 - linguiça toscana(KG)", "🥩 Proteínas"),
     ("822 - camarao argentino (KG)", "🥩 Proteínas"),
     ("868 - camarao vennamei  VG (KG)", "🥩 Proteínas"),
     ("870 - pao mini couvert (KG)", "🥦 Hortifrúti"),
