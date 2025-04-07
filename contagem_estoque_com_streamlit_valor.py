@@ -734,6 +734,8 @@ valores_unitarios = {
 #         except Exception as e:
 #             st.error(f"❌ Erro ao enviar e-mail: {e}")
 
+# aqui criei uma versão atualizada para zerar apos trocar o motivo da contagem
+
 # 📋 Opções de contagem
 opcoes_contagem = {
     "1": "consumo_cafe_da_manha",
