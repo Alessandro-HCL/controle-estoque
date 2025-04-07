@@ -86,7 +86,7 @@ valores_unitarios = {
 "783 - cafe soluvel (KG)": 21.6889,
 "786 - pao de queijo doce (KG)": 30.7248,
 "787 - pao de queijo rech catupiry (KG)": 37.2411,
-"817 - linguiça toscana  (KG)": 27.1946,
+"817 - linguiça toscana(KG)": 27.1946,
 "822 - camarao argentino (KG)": 55.9225,
 "868 - camarao vennamei  VG (KG)": 44.9937,
 "870 - pao mini couvert (KG)": 19.5427,
