@@ -647,7 +647,7 @@ valores_unitarios = {
 "861 - taça borone (UN)": 7.95,
 "862 - pistache granel (KG)": 59.8,
 "863 - chia granel (KG)": 17.4,
-"883 - file de pescada (mistura) (KG)": 28.6,
+"883 - file de pescada (mistura)(KG)": 28.6,
 "900 - copo long drink (UN)": 1.1,
 "902 - copo cerveja (UN)": 1.15,
 "915 - pessego amarelo (UN)": 3.2,
