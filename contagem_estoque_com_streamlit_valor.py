@@ -252,7 +252,7 @@ valores_unitarios = {
 "31 - balde/heineken long neck 10und (UN)": 58.9,
 "32 - balde/corona long neck 10und (UN)": 64.9,
 "33 - cerveja heineken long neck zero (UN)": 5.79,
-"773 - chop schornstein (UN)": 10.5,
+# "773 - chop schornstein (UN)": 10.5,
 "774 - cerveja heineken 600ml (UN)": 7.99,
 "132 - garrafa aperol (UN)": 69.9,
 "133 - garrafa cachaca (UN)": 12.9,
@@ -651,7 +651,7 @@ valores_unitarios = {
 "928 - taca decanter (UN)": 15.0,
 "936 - polenta pacote (KG)": 4.85,
 "938 - taca vidro (UN)": 6.6,
-"000 - Chopp (Litros)": 6.6,
+"000 - Chopp (Litros)": 12.9,
 }
 
 # 📋 Opções de contagem
