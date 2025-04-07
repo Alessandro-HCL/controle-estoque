@@ -4,6 +4,7 @@ itens_classificados = [
     ("499 - açai  (KG)", "📦 Outros ou diversos"),
     ("496 - achocolatado (KG)", "📦 Outros ou diversos"),
     ("495 - leite em po (KG)", "🧀 Laticínios e Frios"),
+    # ("285 - presunto fatiado (KG)", "🧀 Laticínios e Frios"),
     ("285 - presunto fatiado (KG)", "🧀 Laticínios e Frios"),
     ("286 - peito peru (KG)", "🧀 Laticínios e Frios"),
     ("287 - copa (KG)", "🧀 Laticínios e Frios"),
@@ -44,7 +45,6 @@ itens_classificados = [
     ("827 - detergente (UN)", "🧴 Produtos de Limpeza e Higiene"),
     ("861 - taça borone  (UN)", "🍽️ Descartáveis e utensílios"),
     ("711 - guardanapo embalado (CX)", "🍽️ Descartáveis e utensílios"),
-
     ("602 - bolacha maria / maizena (KG)", "📦 Outros ou diversos"),
     ("651 - cobertura chocolate (KG)", "🍞 Padaria e Massas"),
     ("336 - salvia (KG)", "🧂 Temperos e Condimentos"),
