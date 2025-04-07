@@ -45,7 +45,7 @@ itens_classificados = [
     ("827 - detergente (UN)", "🧴 Produtos de Limpeza e Higiene"),
     ("861 - taça borone  (UN)", "🍽️ Descartáveis e utensílios"),
     ("711 - guardanapo embalado (CX)", "🍽️ Descartáveis e utensílios"),
-    ("602 - bolacha maria / maizena (KG)", "📦 Outros ou diversos"),
+    ("602 - bolacha maria / maizena(KG)", "📦 Outros ou diversos"),
     ("651 - cobertura chocolate (KG)", "🍞 Padaria e Massas"),
     ("336 - salvia (KG)", "🧂 Temperos e Condimentos"),
     ("337 - manjericao (KG)", "📦 Outros ou diversos"),
