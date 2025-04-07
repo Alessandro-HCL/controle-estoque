@@ -140,7 +140,7 @@ itens_classificados = [
     ("775 - feijao fradinho (KG)", "🥩 Proteínas"),
     ("859 - linhaça marron (KG)", "🥫 Grãos e Secos"),
     ("931 - pepino em conserva (KG)", "🥦 Hortifrúti"),
-    ("272 - manteiga  (KG)", "🧀 Laticínios e Frios"),
+    ("272 - manteiga(KG)", "🧀 Laticínios e Frios"),
     ("273 - creme de leite nata 45%(KG)", "🧀 Laticínios e Frios"),
     ("291 - pao mini sovadinho (KG)", "🍞 Padaria e Massas"),
     ("292 - pao mini frances (KG)", "🍞 Padaria e Massas"),
