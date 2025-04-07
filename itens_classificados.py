@@ -57,7 +57,7 @@ itens_classificados = [
     ("512 - salsinha verde (KG)", "🧂 Temperos e Condimentos"),
     ("520 - carne moida (KG)", "🥩 Proteínas"),
     ("524 - peixe file (vilmar) (KG)", "🥩 Proteínas"),
-    ("569 - oleo algodao balde(UN)", "📦 Outros ou diversos"),
+    ("569 - oleo_algodao_balde(UN)", "📦 Outros ou diversos"),
     ("697 - ovos de codorna (UN)", "📦 Outros ou diversos"),
     ("781 - abacate (KG)", "📦 Outros ou diversos"),
     ("824 - peixe inteiro (vilmar) (KG)", "🥩 Proteínas"),
