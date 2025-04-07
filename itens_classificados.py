@@ -248,7 +248,7 @@ itens_classificados = [
     ("31 - balde/heineken long neck 10und (UN)", "📦 Outros ou diversos"),
     ("32 - balde/corona long neck 10und (UN)", "📦 Outros ou diversos"),
     ("33 - cerveja heineken long neck  zero  (UN)", "🥤 Bebidas"),
-    ("773 - chop  schornstein (UN)", "📦 Outros ou diversos"),
+    # ("773 - chop  schornstein (UN)", "📦 Outros ou diversos"),
     ("774 - cerveja heineken 600ml (UN)", "🥤 Bebidas"),
     ("132 - garrafa aperol (UN)", "🥤 Bebidas"),
     ("133 - garrafa cachaca  (UN)", "📦 Outros ou diversos"),
