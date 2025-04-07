@@ -655,6 +655,7 @@ valores_unitarios = {
 "928 - taca decanter (UN)": 15.0,
 "936 - polenta pacote (KG)": 4.85,
 "938 - taca vidro (UN)": 6.6,
+"000 - Chopp (Litros)": 6.6,
 }
 
 # 📋 Opções de contagem
