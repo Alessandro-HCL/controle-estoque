@@ -780,6 +780,7 @@ for categoria, itens in categorias_estoque.items():
             valor_unitario = valores_unitarios.get(item_normalizado, 0.00)
             valor_total = round(quantidade * valor_unitario, 2)
 
+            # liberar esta linha abaixo quando quizer fazer T shoot do calculo da planilha e ver se está aparecendo no programa
             # st.text(f"💲 Valor unitário: R$ {valor_unitario:.2f} | Total: R$ {valor_total:.2f}")
 
             if quantidade > 0:
