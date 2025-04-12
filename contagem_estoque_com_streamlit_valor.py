@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime
 import yagmail
 from itens_classificados import itens_classificados
+from valores_unitarios import valores_unitarios
 
 # import streamlit as st
 # import pandas as pd
