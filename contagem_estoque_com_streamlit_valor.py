@@ -1,16 +1,16 @@
-# import streamlit as st
-# import pandas as pd
-# from datetime import datetime
-# import yagmail
-# from itens_classificados import itens_classificados
-
-
 import streamlit as st
 import pandas as pd
 from datetime import datetime
 import yagmail
-from itens_classificados import itens_classificados  # sua lista de tuplas (item, categoria)
-from valores_unitarios import valores_unitarios      # seu dicionário gigante separado para organização
+from itens_classificados import itens_classificados
+
+
+# import streamlit as st
+# import pandas as pd
+# from datetime import datetime
+# import yagmail
+# from itens_classificados import itens_classificados  # sua lista de tuplas (item, categoria)
+# from valores_unitarios import valores_unitarios      # seu dicionário gigante separado para organização
 
 # 💵 Dicionário com valores unitários por item
 valores_unitarios = {
