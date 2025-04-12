@@ -1,8 +1,15 @@
+# import streamlit as st
+# import pandas as pd
+# from datetime import datetime
+# import yagmail
+# from itens_classificados import itens_classificados
+
 import streamlit as st
 import pandas as pd
 from datetime import datetime
 import yagmail
 from itens_classificados import itens_classificados
+from valores_unitarios import valores_unitarios
 
 
 # import streamlit as st
@@ -926,6 +933,7 @@ valores_unitarios = {
 
 # mais uma versao melhorando o anterior
 
+# 📋 Opções de contagem
 opcoes_contagem = {
     "1": "consumo_cafe_da_manha",
     "2": "consumo_casamento_cozinha",
@@ -938,14 +946,14 @@ opcoes_contagem = {
 
 st.title("📦 Contagem de Itens - Villa Sonali")
 
-# Selecionar o objetivo
+# Selecionar objetivo
 objetivo = st.selectbox("Selecione o objetivo da contagem:", list(opcoes_contagem.values()))
 
 # Campo de busca
 busca = st.text_input("🔎 Buscar item pelo nome ou código:")
 busca_normalizada = busca.strip().lower()
 
-# Organiza itens por categoria
+# Organiza por categoria
 categorias_estoque = {}
 for item, categoria in itens_classificados:
     categorias_estoque.setdefault(categoria, []).append(item)
@@ -954,7 +962,7 @@ estoque = {}
 
 st.write("### 📋 Insira as quantidades dos itens:")
 
-# Interface com busca e valores persistentes
+# Interface de entrada com valor persistente
 for categoria, itens in categorias_estoque.items():
     itens_filtrados = [item for item in itens if busca_normalizada in item.lower()] if busca_normalizada else itens
     if not itens_filtrados:
@@ -963,15 +971,17 @@ for categoria, itens in categorias_estoque.items():
     with st.expander(f"📂 {categoria.title()}"):
         for item in itens_filtrados:
             item_key = f"{objetivo}_{item}"
-            if item_key not in st.session_state:
-                st.session_state[item_key] = 0.0
 
             quantidade = st.number_input(
                 f"{item}",
                 min_value=0.0,
                 step=0.1,
+                value=st.session_state.get(item_key, 0.0),
                 key=item_key
             )
+
+            # Atualiza session_state manualmente (necessário para reter após nova busca)
+            st.session_state[item_key] = quantidade
 
             item_normalizado = " ".join(item.split())
             valor_unitario = valores_unitarios.get(item_normalizado, 0.00)
@@ -984,7 +994,7 @@ for categoria, itens in categorias_estoque.items():
                     "Valor Total (R$)": valor_total
                 }
 
-# Botão para gerar planilha e enviar por e-mail
+# 📁 Gerar planilha e enviar
 if st.button("📥 Gerar Planilha e Enviar por Email"):
     if not estoque:
         st.warning("⚠️ Nenhum item com quantidade informada.")
