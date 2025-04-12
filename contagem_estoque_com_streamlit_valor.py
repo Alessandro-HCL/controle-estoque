@@ -1,8 +1,16 @@
+# import streamlit as st
+# import pandas as pd
+# from datetime import datetime
+# import yagmail
+# from itens_classificados import itens_classificados
+
+
 import streamlit as st
 import pandas as pd
 from datetime import datetime
 import yagmail
-from itens_classificados import itens_classificados
+from itens_classificados import itens_classificados  # sua lista de tuplas (item, categoria)
+from valores_unitarios import valores_unitarios      # seu dicionário gigante separado para organização
 
 # 💵 Dicionário com valores unitários por item
 valores_unitarios = {
@@ -734,7 +742,100 @@ valores_unitarios = {
 #         except Exception as e:
 #             st.error(f"❌ Erro ao enviar e-mail: {e}")
 
-# aqui criei uma versão atualizada para zerar apos trocar o motivo da contagem
+
+
+
+
+
+
+# # aqui criei uma versão atualizada para zerar apos trocar o motivo da contagem
+
+# # 📋 Opções de contagem
+# opcoes_contagem = {
+#     "1": "consumo_cafe_da_manha",
+#     "2": "consumo_casamento_cozinha",
+#     "3": "consumo_casamento_salao",
+#     "4": "consumo_pre_wedding",
+#     "5": "consumo_pos_wedding",
+#     "6": "contagem_estoque",
+#     "7": "consumo_funcionarios"
+# }
+
+# st.title("📦 Contagem de Itens - Villa Sonali")
+
+# # 📌 Menu para objetivo
+# escolha = st.selectbox("Selecione o objetivo da contagem:", list(opcoes_contagem.values()))
+# objetivo = escolha
+
+# # 📦 Organiza os itens por categoria
+# categorias_estoque = {}
+# for item, categoria in itens_classificados:
+#     if categoria not in categorias_estoque:
+#         categorias_estoque[categoria] = []
+#     categorias_estoque[categoria].append(item)
+
+# estoque = {}
+
+# st.write("### 📋 Insira as quantidades dos itens:")
+
+# # Interface de entrada para os itens com chave única por objetivo
+# for categoria, itens in categorias_estoque.items():
+#     with st.expander(f"📂 {categoria.title()}"):
+#         for item in itens:
+#             quantidade = st.number_input(
+#                 f"{item}",
+#                 min_value=0.0,
+#                 step=0.1,
+#                 key=f"{objetivo}_{item}"  # <- Chave única para cada objetivo
+#             )
+
+#             # 🔍 Remove espaços duplicados do nome do item antes de buscar o valor
+#             item_normalizado = " ".join(item.split())
+#             valor_unitario = valores_unitarios.get(item_normalizado, 0.00)
+#             valor_total = round(quantidade * valor_unitario, 2)
+
+#             # liberar esta linha abaixo quando quizer fazer T shoot do calculo da planilha e ver se está aparecendo no programa
+#             # st.text(f"💲 Valor unitário: R$ {valor_unitario:.2f} | Total: R$ {valor_total:.2f}")
+
+#             if quantidade > 0:
+#                 estoque[item] = {
+#                     "Quantidade": quantidade,
+#                     "Valor Unitário (R$)": valor_unitario,
+#                     "Valor Total (R$)": valor_total
+#                 }
+
+# # 📁 Botão para gerar planilha
+# if st.button("📥 Gerar Planilha e Enviar por Email"):
+#     if not estoque:
+#         st.warning("⚠️ Nenhum item com quantidade informada.")
+#     else:
+#         df = pd.DataFrame.from_dict(estoque, orient="index")
+#         df.reset_index(inplace=True)
+#         df.rename(columns={"index": "Item"}, inplace=True)
+
+#         data_hora = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+#         nome_arquivo = f"{objetivo}_{data_hora}.xlsx"
+#         df.to_excel(nome_arquivo, index=False)
+
+#         # Envio de e-mail
+#         try:
+#             yag = yagmail.SMTP(user="ale.moreira@gmail.com", password="gncuqrzzkstgeamn")
+#             yag.send(
+#                 to="ale.moreira@gmail.com",
+#                 subject=f"📋 Relatório - {objetivo.replace('_', ' ').title()}",
+#                 contents=f"Segue em anexo o controle de estoque referente a: {objetivo.replace('_', ' ').title()}",
+#                 attachments=nome_arquivo
+#             )
+#             st.success(f"📧 Email enviado com sucesso! Planilha: `{nome_arquivo}`")
+#         except Exception as e:
+#             st.error(f"❌ Erro ao enviar e-mail: {e}")
+
+
+
+
+# aqui mais uma versão, porem incluindo a pesquisa por item
+
+
 
 # 📋 Opções de contagem
 opcoes_contagem = {
@@ -749,39 +850,40 @@ opcoes_contagem = {
 
 st.title("📦 Contagem de Itens - Villa Sonali")
 
-# 📌 Menu para objetivo
-escolha = st.selectbox("Selecione o objetivo da contagem:", list(opcoes_contagem.values()))
-objetivo = escolha
+# Objetivo da contagem
+objetivo = st.selectbox("Selecione o objetivo da contagem:", list(opcoes_contagem.values()))
 
-# 📦 Organiza os itens por categoria
+# Campo de busca
+busca = st.text_input("🔎 Buscar item pelo nome ou código:")
+busca_normalizada = busca.strip().lower()
+
+# Organiza os itens por categoria
 categorias_estoque = {}
 for item, categoria in itens_classificados:
-    if categoria not in categorias_estoque:
-        categorias_estoque[categoria] = []
-    categorias_estoque[categoria].append(item)
+    categorias_estoque.setdefault(categoria, []).append(item)
 
 estoque = {}
 
 st.write("### 📋 Insira as quantidades dos itens:")
 
-# Interface de entrada para os itens com chave única por objetivo
+# Interface com busca
 for categoria, itens in categorias_estoque.items():
+    itens_filtrados = [item for item in itens if busca_normalizada in item.lower()] if busca_normalizada else itens
+    if not itens_filtrados:
+        continue
+
     with st.expander(f"📂 {categoria.title()}"):
-        for item in itens:
+        for item in itens_filtrados:
             quantidade = st.number_input(
                 f"{item}",
                 min_value=0.0,
                 step=0.1,
-                key=f"{objetivo}_{item}"  # <- Chave única para cada objetivo
+                key=f"{objetivo}_{item}"
             )
 
-            # 🔍 Remove espaços duplicados do nome do item antes de buscar o valor
             item_normalizado = " ".join(item.split())
             valor_unitario = valores_unitarios.get(item_normalizado, 0.00)
             valor_total = round(quantidade * valor_unitario, 2)
-
-            # liberar esta linha abaixo quando quizer fazer T shoot do calculo da planilha e ver se está aparecendo no programa
-            # st.text(f"💲 Valor unitário: R$ {valor_unitario:.2f} | Total: R$ {valor_total:.2f}")
 
             if quantidade > 0:
                 estoque[item] = {
@@ -790,7 +892,7 @@ for categoria, itens in categorias_estoque.items():
                     "Valor Total (R$)": valor_total
                 }
 
-# 📁 Botão para gerar planilha
+# Botão para gerar planilha e enviar
 if st.button("📥 Gerar Planilha e Enviar por Email"):
     if not estoque:
         st.warning("⚠️ Nenhum item com quantidade informada.")
@@ -803,7 +905,6 @@ if st.button("📥 Gerar Planilha e Enviar por Email"):
         nome_arquivo = f"{objetivo}_{data_hora}.xlsx"
         df.to_excel(nome_arquivo, index=False)
 
-        # Envio de e-mail
         try:
             yag = yagmail.SMTP(user="ale.moreira@gmail.com", password="gncuqrzzkstgeamn")
             yag.send(
