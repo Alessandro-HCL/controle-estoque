@@ -9,7 +9,7 @@ import pandas as pd
 from datetime import datetime
 import yagmail
 from itens_classificados import itens_classificados
-from valores_unitarios import valores_unitarios
+# from valores_unitarios import valores_unitarios
 
 
 
