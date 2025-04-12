@@ -874,23 +874,40 @@ for categoria, itens in categorias_estoque.items():
 
     with st.expander(f"📂 {categoria.title()}"):
         for item in itens_filtrados:
+            # quantidade = st.number_input(
+            #     f"{item}",
+            #     min_value=0.0,
+            #     step=0.1,
+            #     key=f"{objetivo}_{item}"
+            # )
+           item_key = f"{objetivo}_{item}"
+            if item_key not in st.session_state:
+             st.session_state[item_key] = 0.0
+
             quantidade = st.number_input(
                 f"{item}",
                 min_value=0.0,
                 step=0.1,
-                key=f"{objetivo}_{item}"
-            )
+                key=item_key
+)
 
             item_normalizado = " ".join(item.split())
             valor_unitario = valores_unitarios.get(item_normalizado, 0.00)
             valor_total = round(quantidade * valor_unitario, 2)
 
+            # if quantidade > 0:
+            #     estoque[item] = {
+            #         "Quantidade": quantidade,
+            #         "Valor Unitário (R$)": valor_unitario,
+            #         "Valor Total (R$)": valor_total
+            #     }
+
             if quantidade > 0:
                 estoque[item] = {
-                    "Quantidade": quantidade,
-                    "Valor Unitário (R$)": valor_unitario,
-                    "Valor Total (R$)": valor_total
-                }
+                 "Quantidade": quantidade,
+                 "Valor Unitário (R$)": valor_unitario,
+                 "Valor Total (R$)": valor_total
+    }
 
 # Botão para gerar planilha e enviar
 if st.button("📥 Gerar Planilha e Enviar por Email"):
