@@ -929,7 +929,11 @@ valores_unitarios = {
 # mais uma versao melhorando o anterior
 
 
-# 📋 Opções de contagem
+# Inicializa o estado da sessão para armazenar o estoque preenchido
+if 'estoque' not in st.session_state:
+    st.session_state.estoque = {}
+
+# Opções de contagem
 opcoes_contagem = {
     "1": "consumo_cafe_da_manha",
     "2": "consumo_casamento_cozinha",
@@ -937,7 +941,7 @@ opcoes_contagem = {
     "4": "consumo_pre_wedding",
     "5": "consumo_pos_wedding",
     "6": "contagem_estoque",
-    "7": "consumo_Almoço_funcionarios"
+    "7": "consumo_Almoco_funcionarios"
 }
 
 st.title("📦 Contagem de Itens - Villa Sonali")
@@ -949,16 +953,10 @@ objetivo = st.selectbox("Selecione o objetivo da contagem:", list(opcoes_contage
 busca = st.text_input("🔎 Buscar item pelo nome ou código:")
 busca_normalizada = busca.strip().lower()
 
-# Inicializa a sessão de estado para manter as quantidades preenchidas
-if 'quantidades' not in st.session_state:
-    st.session_state['quantidades'] = {}
-
 # Organiza os itens por categoria
 categorias_estoque = {}
 for item, categoria in itens_classificados:
     categorias_estoque.setdefault(categoria, []).append(item)
-
-estoque = {}
 
 st.write("### 📋 Insira as quantidades dos itens:")
 
@@ -970,33 +968,34 @@ for categoria, itens in categorias_estoque.items():
 
     with st.expander(f"📂 {categoria.title()}"):
         for item in itens_filtrados:
-            key = f"{objetivo}_{item}"
-            valor_unitario = valores_unitarios.get(" ".join(item.split()), 0.00)
+            chave = f"{objetivo}_{item}"
             quantidade = st.number_input(
                 f"{item}",
                 min_value=0.0,
                 step=0.1,
-                key=key,
-                value=st.session_state['quantidades'].get(key, 0.0)
+                key=chave,
+                value=st.session_state.estoque.get(item, {}).get("Quantidade", 0.0)
             )
 
-            st.session_state['quantidades'][key] = quantidade
-
+            item_normalizado = " ".join(item.split())
+            valor_unitario = valores_unitarios.get(item_normalizado, 0.00)
             valor_total = round(quantidade * valor_unitario, 2)
 
             if quantidade > 0:
-                estoque[item] = {
+                st.session_state.estoque[item] = {
                     "Quantidade": quantidade,
                     "Valor Unitário (R$)": valor_unitario,
                     "Valor Total (R$)": valor_total
                 }
+            elif item in st.session_state.estoque:
+                del st.session_state.estoque[item]
 
 # Botão para gerar planilha e enviar
-if st.button("📥 Gerar Planilha e Enviar por Email"):
-    if not estoque:
+if st.button("📅 Gerar Planilha e Enviar por Email"):
+    if not st.session_state.estoque:
         st.warning("⚠️ Nenhum item com quantidade informada.")
     else:
-        df = pd.DataFrame.from_dict(estoque, orient="index")
+        df = pd.DataFrame.from_dict(st.session_state.estoque, orient="index")
         df.reset_index(inplace=True)
         df.rename(columns={"index": "Item"}, inplace=True)
 
@@ -1013,7 +1012,8 @@ if st.button("📥 Gerar Planilha e Enviar por Email"):
                 attachments=nome_arquivo
             )
             st.success(f"📧 Email enviado com sucesso! Planilha: `{nome_arquivo}`")
-            st.session_state['quantidades'] = {}  # 🔁 Zera os dados após envio com sucesso
+            st.session_state.estoque = {}  # Zera os dados após envio
         except Exception as e:
             st.error(f"❌ Erro ao enviar e-mail: {e}")
+
 
