@@ -3,22 +3,9 @@ import pandas as pd
 from datetime import datetime
 import yagmail
 from itens_classificados import itens_classificados
-from valores_unitarios import valores_unitarios
-
-# import streamlit as st
-# import pandas as pd
-# from datetime import datetime
-# import yagmail
-# from itens_classificados import itens_classificados
-# from valores_unitarios import valores_unitarios
 
 
-# import streamlit as st
-# import pandas as pd
-# from datetime import datetime
-# import yagmail
-# from itens_classificados import itens_classificados  # sua lista de tuplas (item, categoria)
-# from valores_unitarios import valores_unitarios      # seu dicionário gigante separado para organização
+
 
 # 💵 Dicionário com valores unitários por item
 valores_unitarios = {
@@ -845,95 +832,6 @@ valores_unitarios = {
 
 
 
-# # 📋 Opções de contagem
-# opcoes_contagem = {
-#     "1": "consumo_cafe_da_manha",
-#     "2": "consumo_casamento_cozinha",
-#     "3": "consumo_casamento_salao",
-#     "4": "consumo_pre_wedding",
-#     "5": "consumo_pos_wedding",
-#     "6": "contagem_estoque",
-#     "7": "consumo_Almoço_funcionarios"
-# }
-
-# st.title("📦 Contagem de Itens - Villa Sonali")
-
-# # Objetivo da contagem
-# objetivo = st.selectbox("Selecione o objetivo da contagem:", list(opcoes_contagem.values()))
-
-# # Campo de busca
-# busca = st.text_input("🔎 Buscar item pelo nome ou código:")
-# busca_normalizada = busca.strip().lower()
-
-# # Organiza os itens por categoria
-# categorias_estoque = {}
-# for item, categoria in itens_classificados:
-#     categorias_estoque.setdefault(categoria, []).append(item)
-
-# estoque = {}
-
-# st.write("### 📋 Insira as quantidades dos itens:")
-
-# # Interface com busca
-# for categoria, itens in categorias_estoque.items():
-#     itens_filtrados = [item for item in itens if busca_normalizada in item.lower()] if busca_normalizada else itens
-#     if not itens_filtrados:
-#         continue
-
-#     with st.expander(f"📂 {categoria.title()}"):
-#         for item in itens_filtrados:
-#             quantidade = st.number_input(
-#                 f"{item}",
-#                 min_value=0.0,
-#                 step=0.1,
-#                 key=f"{objetivo}_{item}"
-#             )
-        
-# # )
-
-#             item_normalizado = " ".join(item.split())
-#             valor_unitario = valores_unitarios.get(item_normalizado, 0.00)
-#             valor_total = round(quantidade * valor_unitario, 2)
-
-#             if quantidade > 0:
-#                 estoque[item] = {
-#                     "Quantidade": quantidade,
-#                     "Valor Unitário (R$)": valor_unitario,
-#                     "Valor Total (R$)": valor_total
-#                 }
-
-       
-
-# # Botão para gerar planilha e enviar
-# if st.button("📥 Gerar Planilha e Enviar por Email"):
-#     if not estoque:
-#         st.warning("⚠️ Nenhum item com quantidade informada.")
-#     else:
-#         df = pd.DataFrame.from_dict(estoque, orient="index")
-#         df.reset_index(inplace=True)
-#         df.rename(columns={"index": "Item"}, inplace=True)
-
-#         data_hora = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-#         nome_arquivo = f"{objetivo}_{data_hora}.xlsx"
-#         df.to_excel(nome_arquivo, index=False)
-
-#         try:
-#             yag = yagmail.SMTP(user="ale.moreira@gmail.com", password="gncuqrzzkstgeamn")
-#             yag.send(
-#                 to="ale.moreira@gmail.com",
-#                 subject=f"📋 Relatório - {objetivo.replace('_', ' ').title()}",
-#                 contents=f"Segue em anexo o controle de estoque referente a: {objetivo.replace('_', ' ').title()}",
-#                 attachments=nome_arquivo
-#             )
-#             st.success(f"📧 Email enviado com sucesso! Planilha: `{nome_arquivo}`")
-#         except Exception as e:
-#             st.error(f"❌ Erro ao enviar e-mail: {e}")
-
-
-
-
-# mais uma versao melhorando o anterior
-
 # 📋 Opções de contagem
 opcoes_contagem = {
     "1": "consumo_cafe_da_manha",
@@ -942,19 +840,19 @@ opcoes_contagem = {
     "4": "consumo_pre_wedding",
     "5": "consumo_pos_wedding",
     "6": "contagem_estoque",
-    "7": "consumo_funcionarios"
+    "7": "consumo_Almoço_funcionarios"
 }
 
 st.title("📦 Contagem de Itens - Villa Sonali")
 
-# Selecionar objetivo
+# Objetivo da contagem
 objetivo = st.selectbox("Selecione o objetivo da contagem:", list(opcoes_contagem.values()))
 
 # Campo de busca
 busca = st.text_input("🔎 Buscar item pelo nome ou código:")
 busca_normalizada = busca.strip().lower()
 
-# Organiza por categoria
+# Organiza os itens por categoria
 categorias_estoque = {}
 for item, categoria in itens_classificados:
     categorias_estoque.setdefault(categoria, []).append(item)
@@ -963,7 +861,7 @@ estoque = {}
 
 st.write("### 📋 Insira as quantidades dos itens:")
 
-# Interface de entrada com valor persistente
+# Interface com busca
 for categoria, itens in categorias_estoque.items():
     itens_filtrados = [item for item in itens if busca_normalizada in item.lower()] if busca_normalizada else itens
     if not itens_filtrados:
@@ -971,18 +869,14 @@ for categoria, itens in categorias_estoque.items():
 
     with st.expander(f"📂 {categoria.title()}"):
         for item in itens_filtrados:
-            item_key = f"{objetivo}_{item}"
-
             quantidade = st.number_input(
                 f"{item}",
                 min_value=0.0,
                 step=0.1,
-                value=st.session_state.get(item_key, 0.0),
-                key=item_key
+                key=f"{objetivo}_{item}"
             )
-
-            # Atualiza session_state manualmente (necessário para reter após nova busca)
-            st.session_state[item_key] = quantidade
+        
+# )
 
             item_normalizado = " ".join(item.split())
             valor_unitario = valores_unitarios.get(item_normalizado, 0.00)
@@ -995,7 +889,9 @@ for categoria, itens in categorias_estoque.items():
                     "Valor Total (R$)": valor_total
                 }
 
-# 📁 Gerar planilha e enviar
+       
+
+# Botão para gerar planilha e enviar
 if st.button("📥 Gerar Planilha e Enviar por Email"):
     if not estoque:
         st.warning("⚠️ Nenhum item com quantidade informada.")
@@ -1019,3 +915,10 @@ if st.button("📥 Gerar Planilha e Enviar por Email"):
             st.success(f"📧 Email enviado com sucesso! Planilha: `{nome_arquivo}`")
         except Exception as e:
             st.error(f"❌ Erro ao enviar e-mail: {e}")
+
+
+
+
+# mais uma versao melhorando o anterior
+
+
