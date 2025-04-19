@@ -35,7 +35,7 @@ itens_classificados = [
     ("365 - camarao cinza (KG)", "🥩 Proteínas"),
     ("366 - lula (KG)", "🥩 Proteínas"),
     # ("335 - ovos(UN)", "🥦 Hortifrúti"),
-      ("335 - ovos(UN)", "🥩 Proteínas"),
+      ("335-ovos(UN)", "🥩 Proteínas"),
     ("294 - pao mini ciabata (KG)", "🍞 Padaria e Massas"),
     ("295 - pao ciabata (KG)", "🍞 Padaria e Massas"),
     ("297 - pao baguete 250g (KG)", "🍞 Padaria e Massas"),
