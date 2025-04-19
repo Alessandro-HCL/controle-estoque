@@ -28,7 +28,7 @@ valores_unitarios = {
    "651 - cobertura chocolate (KG)": 34.50,
    "652 - cobertura morango (KG)": 18.90,
    "745 - mini cheesecake (CX)": 0.00,
-   "335 - ovos(UN)": 0.7726,
+   "335-ovos(UN)": 0.7726,
    "336 - salvia (KG)": 0.00,
    "337 - manjericao (KG)": 2.95,
    "338 - manjericao (KG)": 2.95,
