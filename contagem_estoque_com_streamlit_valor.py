@@ -20,7 +20,7 @@ valores_unitarios = {
    "495 - leite em po (KG)": 46.654,
    "496 - achocolatado (KG)": 32.5667,
    # "499 - açai(KG)": 21.2311,
-   "499 - açai  (kg)": 21.2311,
+   # "499 - açai  (kg)": 21.2311,
    "574 - petit gateau (UN)": 20.90,
    "575 - calda de sorvete (KG)": 0.01,
    "597 - biscoito(CX)": 4.98,
