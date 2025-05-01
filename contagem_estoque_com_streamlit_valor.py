@@ -1037,7 +1037,8 @@ opcoes_contagem = {
     "4": "consumo_pre_wedding",
     "5": "consumo_pos_wedding",
     "6": "contagem_estoque",
-    "7": "Consumo_alimentação_funcionarios"
+    "7": "Consumo_alimentação_funcionarios",
+   "8": "Consumo_produtos_Uso_interno_etc"
 }
 
 st.title("\U0001F4E6 Contagem de Itens - Villa Sonali")
