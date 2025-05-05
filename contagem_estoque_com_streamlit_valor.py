@@ -661,9 +661,9 @@ valores_unitarios = {
 "924 - dianteiro bovino (KG)": 27.5,
 "928 - taca decanter (UN)": 15.0,
 "936 - polenta pacote (KG)": 4.85,
-"938 - taca vidro (UN)": 6.6,
+"938 - taca vidro (UN)": 12.77,
 "000 - Chopp (Litros)": 12.9,
-"644 - taca_vidro_espumante(UN)": 6.6,
+"644 - taca_vidro_espumante(UN)": 12,77,
 }
 
 # # 📋 Opções de contagem
