@@ -645,4 +645,5 @@ itens_classificados = [
     ("936 -  polenta pacote (KG)", "📦 Outros ou diversos"),
     ("938 - taca vidro (UN)", "📦 Outros ou diversos"),
     ("000 - Chopp (Litros)", "🥤 Bebidas"),
+    ("644 - taca_vidro_espumante(UN)", "📦 Outros ou diversos"),
 ]
