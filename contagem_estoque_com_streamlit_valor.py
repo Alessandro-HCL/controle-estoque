@@ -663,6 +663,7 @@ valores_unitarios = {
 "936 - polenta pacote (KG)": 4.85,
 "938 - taca vidro (UN)": 6.6,
 "000 - Chopp (Litros)": 12.9,
+"644 - taca_vidro_espumante(UN)": 6.6,
 }
 
 # # 📋 Opções de contagem
