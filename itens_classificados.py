@@ -31,7 +31,7 @@ itens_classificados = [
     ("302 - linguiça toscana frango (KG)", "🥩 Proteínas"),
     ("359 - carne de siri  (KG)", "🥩 Proteínas"),
     ("361 - marisco (KG)", "🥩 Proteínas"),
-    ("362 - ostra (UN)", "🥩 Proteínas"),
+    # ("362 - ostra (UN)", "🥩 Proteínas"),
     ("364 - camarao rosa (KG)", "🥩 Proteínas"),
     ("365 - camarao cinza (KG)", "🥩 Proteínas"),
     ("366 - lula (KG)", "🥩 Proteínas"),
