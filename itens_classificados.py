@@ -5,8 +5,7 @@ itens_classificados = [
     ("499 - açai  (kg)", "📦 Outros ou diversos"),
     ("496 - achocolatado (KG)", "📦 Outros ou diversos"),
     ("495 - leite em po (KG)", "🧀 Laticínios e Frios"),
-    ("285 - presunto fatiado (KG)", "🧀 Laticínios e Frios"),
-    # ("285-presunto-fatiado-(KG)", "🧀 Laticínios e Frios"),
+    ("285 - presunto fatiado  (KG)", "🧀 Laticínios e Frios"),
     ("286 - peito peru (KG)", "🧀 Laticínios e Frios"),
     ("287 - copa (KG)", "🧀 Laticínios e Frios"),
     ("288 - salame (KG)", "🧀 Laticínios e Frios"),
@@ -643,7 +642,7 @@ itens_classificados = [
     ("924 - dianteiro bovino (KG)", "🥩 Proteínas"),
     ("928 - taca decanter (UN)", "📦 Outros ou diversos"),
     ("936 -  polenta pacote (KG)", "📦 Outros ou diversos"),
-    ("938 - taca vidro (UN)", "📦 Outros ou diversos"),
+    ("938 - taca vidro agua (UN)", "📦 Outros ou diversos"),
     ("000 - Chopp (Litros)", "🥤 Bebidas"),
     ("644 - taca vidro espumante (UN)", "📦 Outros ou diversos"),
 ]
