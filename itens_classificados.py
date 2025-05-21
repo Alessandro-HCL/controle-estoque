@@ -645,4 +645,5 @@ itens_classificados = [
     ("938 - taca vidro agua (UN)", "📦 Outros ou diversos"),
     ("000 - Chopp (Litros)", "🥤 Bebidas"),
     ("644 - taca vidro espumante (UN)", "📦 Outros ou diversos"),
+    ("943 - caneca moscow mule (un)", "📦 Outros ou diversos"),
 ]
