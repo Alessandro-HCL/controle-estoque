@@ -560,7 +560,7 @@ itens_classificados = [
     ("744 - mini croissant frango/requeijao (KG)", "🥩 Proteínas"),
     ("747 - mistura de bolo (UN)", "🍬 Doces e Sobremesas"),
     ("751 - mini croissant s/recheio (KG)", "🍞 Padaria e Massas"),
-    ("753 - chia semente (UN)", "🥫 Grãos e Secos"),
+    # ("753 - chia semente (UN)", "🥫 Grãos e Secos"),
     ("760 - mini croissant  goiabada (KG)", "🍞 Padaria e Massas"),
     ("761 - mini couvert (KG)", "🥦 Hortifrúti"),
     ("768 - cha cidreira (UN)", "📦 Outros ou diversos"),
