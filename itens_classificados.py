@@ -334,7 +334,7 @@ itens_classificados = [
     ("661 - açucar sache (KG)", "📦 Outros ou diversos"),
     ("683 - fruta laranja bahia (KG)", "🥦 Hortifrúti"),
     ("686 - fruta maracuja   (KG)", "📦 Outros ou diversos"),
-    ("688 - copo vidro (UN)", "🍽️ Descartáveis e utensílios"),
+    # (" - copo vidro (UN)", "🍽️ Descartáveis e utensílios"),
     ("696 - açucar  confeitero (KG)", "📦 Outros ou diversos"),
     ("710 - VASILHAME 20 LITROS (LT)", "📦 Outros ou diversos"),
     ("715 - suco manguary maracuja (UN)", "🥤 Bebidas"),
